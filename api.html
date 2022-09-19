@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width , initial scale=1.0">
+        <title>APIs page</title>
+        <link rel="icon" type="image/x-icon" href="favicon.jpg">
+
+        <style>
+            #serverResult{
+                margin-top: 20px;
+                color: white;
+                font-size: 19px;
+            }
+        </style>
+    </head>
+    
+    <body style="background-color: purple;">
+        <p style="color: gold;">Go to the drag and drop page :</p>
+        <a href="dragdrop.html" style="text-decoration: none; color: greenyellow; font-size: 25px;">Drag/Drop Page</a><br><br>
+        <a href="sse.php" style="text-decoration: none; color: greenyellow; font-size: 25px;">SSE page</a>
+        <p style="color: white;">Click the button below to show your coordinates :</p><br>
+        <button onClick="getLocation()">Try it</button><br>
+        <p id="cords"></p>
+         
+        <!--WEB WORKERS-->
+        <p style="color: gold;">Count numbers : <output id="resul"></output></p>
+        <button onClick="startWorker()">Start Worker</button>
+        <button onClick="stopWorker()">Stop Worker</button>
+
+        <button onClick="testTheWorker()">Test worker</button>
+        
+        <!-- SERVER-SIDE EVENTS-->
+        <button onClick="testTheSse()">Test SSE</button><br> <!--Server-sent events-->
+        <div id="serverResult"></div>
+       
+        <!-- EVENT SOURCE OBJECTS : ONOPEN , ONERROR , ONMESSAGE -->
+
+        <script>
+        //WITHOUT ERROR HANDLING 
+
+        /* var c = document.getElementById("cords");
+
+        function getLocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showLocation);
+            }
+            else {
+            c.innerHTML = "Your browser does not support geolocation";
+            }
+
+            function showLocation(location) {
+            c.innerHTML = "Latitude: " + location.coords.latitude +
+            "<br>Longitude: " + location.coords.longitude;
+            }
+
+            c.style.color = "white";
+        }*/
+
+        //WITH ERROR HANDLING 
+
+        var d = document.getElementById("cords");
+        d.style.color = "white";
+        d.style.fontSize = "40px";
+        
+        function getLocation() {
+            if(navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition,showError); //We have the watchPosition() method that updates with user movement , and the clearWatch() that stops this method.
+            }
+            else {
+                d.innerHTML = "Geolocation is not supported by your browser";
+            }
+
+            function showPosition(position){
+                d.innerHTML = "Latitude: " + position.coords.latitude + 
+                "<br>Longitude: " + position.coords.longitude; 
+            /*  "<br>Altitude: " + position.coords.altitude +
+                "<br>Altitude-accuracy: " + position.coords.altitudeAccuracy +
+                "<br>Heading: " + position.coords.heading +
+                "<br>Speed: " + position.coords.speed + */
+            //  "<br>Time :" + timestamp;
+                
+            }
+
+            function showError(errorType) {
+                switch(errorType.code){
+                    case errorType.PERMISSION_DENIED:
+                    d.innerHTML = "Request to get location by the user was denied"
+                    break;
+                    case errorType.POSITION_UNAVAILABLE:
+                    d.innerHTML = "This position is currently not available"
+                    break;
+                    case errorType.TIMEOUT:
+                    d.innerHTML = "Sorry , your request timed out"
+                    break;
+                    case errorType.UNKNOWN_ERROR:
+                    d.innerHTML = "Please retry , an unknown error occured"
+                    break;
+                }
+            }
+            
+        }
+
+            function testTheWorker(){
+                if(typeof(worker) !== "undefined") {
+                    document.getElementById("resul").innerHTML = "Browser supports web workers!";
+                } 
+                else {
+                    document.getElementById("resul").innerHTML = "Browser does not support web workers...";
+                }
+            }
+            
+            //FOR SSE TO WORK , A SERVER CAPABLE OF SENDING DATA UPDATES LIKE PHP OR ASP IS NEEDED.
+           function testTheSse() {
+                if(typeof(EventSource) !== "undefined") {
+                    document.getElementById("serverResult").innerHTML = "Your browser supports server side events!"
+                }
+                else{
+                    document.getElementById("serverResult").innerHTML = "Your browser does not support server side events!"
+                }
+           }   
+
+                if(typeof(EventSource) !== "undefined") {
+                 var source = new EventSource("sse.php");
+                    source.onmessage = function(event) {
+                    document.getElementById("serverResul").innerHTML += event.data + "<br>";
+                   };
+                } 
+                else {
+                    document.getElementById("serverResul").innerHTML = "Sorry, your browser does not support server-sent events...";
+                }
+                
+            var w;
+            function startWorker() {
+               if(typeof(worker) !== "undefined"){
+                    if(typeof(w) == "defined") {
+                        w = new worker("demo_workers.js");
+                    }
+                        w.onmessage = function(event) {
+                            document.getElementById("resul").innerHTML = event.data;
+                        }     
+               }
+               else{
+                        document.getElementById("resul").innerHTML = "Sorry your browser does not support web workers..."
+               }  
+            }
+
+            function stopWorker() {
+                w.terminate();
+                w = undefined;
+            }
+
+            /*Since the browser does not support web workers , we can not test the output, but if it was
+            to support it , we would need an external JS file that counts for the new worker which is the
+            demo_worker.js above*/
+
+            /*var i = 0;
+
+            function timedCount() {
+                i = i + 1;
+                postMessage(i);
+                setTimeout("timedCount" , 500);
+            }
+
+            timedCount(); */
+        </script>
+    </body>
+</html>

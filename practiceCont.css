@@ -1,0 +1,112 @@
+/* * {
+    box-sizing: border-box;
+}
+body {
+    background-color: blueviolet;
+}
+header{
+    color: white;
+    background-color: grey;
+    text-align: center;
+    padding: 55px;
+}
+nav{
+    width: 35%;
+    float: left;
+    height:285px;
+    background-color: rgb(255, 153, 0);
+}
+nav ul{
+    list-style-type: none;
+    font-size: 20px;
+    color: white;
+}
+li a{
+    text-decoration: none;
+}
+article{
+    float: right;
+    width: 65%;
+    background-color: green;
+    height:285px;
+    font-size: 18px;
+    color: white;
+}
+article p, article h1{
+    padding-left: 35px;
+}
+section::after {
+    content:"";
+    display: table;
+    clear: both;
+}
+footer{
+    color: white;
+    background-color: grey;
+    text-align: center;
+    padding: 55px;
+}
+@media (max-width:600px){
+    nav,article {
+        width: 100%;
+        height: auto;
+    }
+}*/
+ 
+/* STYLING WITH FLEXBOX : */
+
+*{
+    box-sizing: border-box;
+}
+body {
+    background-color: blueviolet;
+}
+header{
+    color: white;
+    background-color: grey;
+    text-align: center;
+    padding: 55px;
+}
+section{
+  /*display: -webkit-flex; */
+    display: flex;
+}
+nav{
+  /*-ms-flex: 1;
+    -webkit-flex: 1;*/
+    flex:1;
+    background-color: rgb(255, 153, 0);
+    height:285px;
+}
+nav ul{
+    list-style-type: none;
+    font-size: 20px;
+}
+li a{
+    text-decoration: none;
+    color: white;
+}
+article{
+    flex: 3;
+    background-color: green;
+    font-size: 18px; /*2vw - 2% of viewport width*/ 
+    color: white;
+    height:285px;
+}
+article p, article h1{
+    padding-left: 35px;
+}
+footer{
+    color: white;
+    background-color: grey;
+    text-align: center;
+    padding: 55px;
+}
+@media screen and (max-width: 600px){
+    section {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    }
+}
+

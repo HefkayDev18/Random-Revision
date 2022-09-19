@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width , initial scale=1.0">
+        <title>Graphics</title>
+        <link rel="icon" type="image/x-icon" href="favicon.jpg">
+    </head>
+
+    <body style="background-color:rgb(134, 25, 25);">
+        <canvas id="newcanvas" width="800" height="400" style="border: 1px solid transparent;">
+        Your browser does not support the canvas tag<!--Sample element-->
+        </canvas>
+        <canvas id="anothercanvas" width="400" height="200" style="border: 1px solid transparent;">
+            Your browser does not support the canvas tag<!--Sample element-->
+        </canvas>
+        <canvas id="freshcanv" width="400" height="200" style="border: 1px solid transparent;">
+            Your browser does not support the canvas tag<!--Sample element-->
+        </canvas>
+
+        <p style="color:white;">Image to use:</p>
+        <img id="canvasImage" src="favicon.jpg" alt="Picture in use" width="300" height="300">
+
+        <p style="color:white;">Canvas to fill:</p>
+        <canvas id="picanvas" width="300" height="300" style="border:1px solid transparent;"></canvas>
+        
+        <p><button onClick="myCanvas()">Click to fill</button></p>
+
+        <!-- USING SVGs - SCALABLE VECTOR GRAPHICS -->
+        <p style="color:white;">USING SVGs : </p>
+        
+        <!--CIRCLE-->
+        <svg width="200" height="200">
+          <circle cx="60" cy="60" r="50" stroke="green" stroke-width="10" fill="yellow"/>
+          Your browser does not support inline SVGs
+        </svg>
+        
+        <!--RECTANGLE-->
+        <svg width="400" height="200">
+            <rect width="400" height="200" fill="blue" stroke-width="6" stroke="black" />
+            <!--style="fill:blue ; stroke:black ; stroke-width: 6;"-->
+          Your browser does not support inline SVGs
+        </svg>
+         
+        <!--ROUNDED RECTANGLE-->
+        <svg width="400" height="180">
+            <rect x="15" y="15" rx="30" ry="30" width="200" height="150"
+            style="fill:red; stroke: yellow; stroke-width: 4;" />
+        </svg>
+        
+        <!--POLYGON-->
+        <svg width="300" height="200">
+            <polygon points="100,10 40,198 190,78 10,78 160,198"
+            style="fill:red; stroke:white; stroke-width:5; fill-rule:evenodd;" />
+          Your browser does not support inline SVGs
+        </svg>
+        
+        <!--LOGO-->
+        <svg width="200" height="300">
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:blue; stop-opacity:1;"/>
+                    <stop offset="100%" style="stop-color:red; stop-opacity:1;"/>
+                </linearGradient>
+            </defs>
+            <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)"/><!--YOU CAN CHANGE TO CIRCLE TOO-->
+            <text fill="white" font-size="45" font-family="verdana" x="50" y="86">SVG</text>
+            Your browser does not support inline SVGs
+        </svg>
+
+        <!--TRYING THE CIRCLE TYPE-->
+      <!--<svg width="400" height="300">
+            <defs>
+                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color: green; stop-opacity:1;"/>
+                    <stop offset="100%" style="stop-color: blue; stop-opacity:1;"/>
+                </linearGradient>
+                <circle cx="120" cy="100" r="90" fill="url(#grad2)" />
+                <text fill="white" font-size="45" font-family="verdana" x="50 y=86">SVG2</text>
+            </defs>
+            Your browser does not support inline SVGs
+        </svg> FOR SOME REASON , IT DIDNT WORK-->  
+
+        <script>
+            var h = document.getElementById("newcanvas");
+            var gctx = h.getContext("2d");
+            gctx.moveTo(0,0);  //ctx.moveTo(0,50); gctx.lineTo(200,50);
+            gctx.lineTo(800,400);
+            gctx.stroke();
+
+            var g = document.getElementById("newcanvas");
+            var gctx2 = g.getContext("2d");
+            gctx2.beginPath();
+            gctx2.arc(400,200,200,0,2*Math.PI);
+            gctx2.stroke();
+
+            var a = document.getElementById("newcanvas");
+            var actx = a.getContext("2d");
+            actx.font = "30px Arial";
+            actx.fillText("Hello World", 330, 200);
+
+            var b = document.getElementById("newcanvas");
+            var bgcx = b.getContext("2d");
+            bgcx.font = "30px arial";
+            bgcx.strokeText("Hello world", 330 , 160);
+
+            function myCanvas(){
+            var z = document.getElementById("picanvas");
+            var zctx = z.getContext("2d");
+            var img = document.getElementById("canvasImage");
+            zctx.drawImage(img,0,0,300,300);
+            }
+
+        </script>
+
+        <script>
+
+            var d = document.getElementById("anothercanvas");
+            var dgcx = d.getContext("2d");
+            // Create gradient
+            var grad = dgcx.createLinearGradient(0,0,200,0);
+            grad.addColorStop(0,"red");
+            grad.addColorStop(1,"blue");
+            // Fill with gradient
+            dgcx.fillStyle = grad;
+            dgcx.fillRect(8,8,384,180); 
+
+            var l = document.getElementById("freshcanv");
+            var lgcx = l.getContext("2d");
+
+            var grd = lgcx.createRadialGradient(175, 50, 5, 190, 60, 200);
+            grd.addColorStop(0 , "red");
+            grd.addColorStop(1 , "white");
+
+            lgcx.fillStyle = grd;
+            lgcx.fillRect(8,8,384,180);
+
+        </script>
+            
+    </body>
+</html>
+
+

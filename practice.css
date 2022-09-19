@@ -1,0 +1,104 @@
+body {
+    background-color: orange;
+/*  background-image: url('https://th.bing.com/th?q=Frenkie+De+Jong+Ajax&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-WW&cc=NG&setlang=en&adlt=moderate&t=1&mw=247');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    background-size: 100% 100%;*/
+}
+h1 {
+    border: 8px solid tomato;
+    padding: 4px;
+   /* margin: 6px;*/
+    margin: auto;
+}
+button {
+    color:blue;
+    background-color:red;
+    border-radius:10px;
+    margin-left: 50%;
+    padding: 5px;
+}
+button:hover {
+    background-color: white;
+    cursor: pointer;
+}
+a:link {
+    color: brown;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: green;
+    background-color: brown;
+    text-decoration : none;
+}
+a:hover {
+    color: indigo;
+    background-color: red;
+    text-decoration: underline;
+}
+a:active {
+    color: grey;
+    background-color: aquamarine ;
+    text-decoration : none;
+}
+#image {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse:collapse;
+   /*border-spacing:20px;*/
+    width: 100%;
+    border-spacing:30px;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 20px;
+    border-style:dotted;
+    border-radius: 10px;
+} 
+tr:nth-child(odd) {
+    background-color: rgb(17, 153, 199);
+}
+th:nth-child(even){
+    background-color: rgb(207, 24, 24);
+}
+tr:hover{
+    background-color:blueviolet;
+}
+#example{
+    text-align: center;
+    color: blue;
+    font-size: 19px;
+}
+.NavBar{
+    list-style-type: none;
+    background-color: #333333;
+    padding:0;
+  /*margin:0;
+    width: 100%; */
+    overflow:hidden;
+    text-align: center;
+}
+#home,#about,#contact,#faq{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+#home1:hover,#about1:hover,#contact1:hover,#faq1:hover,
+#home:hover,#about:hover,#contact:hover,#faq:hover
+{
+    background-color: #111111;
+}
+#home1,#about1,#contact1,#faq1{
+    padding:16px;
+    float:left;
+}
+.NoStyle {
+    float:left;
+}
+

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        <meta charset="UTF-8">
+        <meta name="description" content="Free Web tutorials">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="John Doe">
+        ALL META INFORMATION GOES INTO THE HEAD
+        -->
+    <!--name,http-equiv,content can be used too-->
+    <title>First Revision</title>
+    <!--If I specified a base URL in the head section, the browser will look for the image at "https://www.w3schools.com/images/stickman.gif".
+         Whereas in my img src i have it as images/stickman.gif , it is written as <base href = "https://www.w3schools.com/">
+        you can add a target property , and only one base element is allowed in the HTML DOC -->
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+    <link rel="stylesheet" type="text/css" href="practice.css">
+    <!--<style> IF YOUR SCRIPT TAG IS IN THE HEAD TAG , IT IS WRITTEN AS : <script src = ''></script>
+            body {
+                background-color: orchid;
+            }
+        </style> internal styling-->
+</head>
+<!--STYLE="BACKGROUND-COLOR:ORANGE;"-->
+
+<body>
+    <!--Though its better to use lower case -->
+    <div>
+      <nav>
+        <ul class="NavBar">
+            <!--FOR MULTIPLE CLASSES , WE LEAVE A SPACE-->
+            <li id="home1"><a id="home" href="practiceCont.html">Layout</a></li>
+            <li id="about1"><a id="about" href="Framework.html" target="_blank">Framework</a></li>
+            <li id="contact1"><a id="contact" href="Rsample.html">Rsample</a></li>
+            <li id="faq1"><a id="faq" href="forms.html">Forms</a></li>
+            <li id="faq1"><a id="faq" href="graphics.html">Graphics</a></li>
+            <li id="faq1"><a id="faq" href="media.html" target="_blank">Media</a></li>
+            <li id="faq1"><a id="faq" href="api.html" target="_blank">APIs</a></li>
+        </ul>
+      </nav>
+        <button type="button" onClick="TheFunction()">Hide The Nav Bar Button</button>
+        <h1 title="ILB" id="GTT" style="color:blue; text-align: center; background-color:white;">
+            <!--RGB,RGBA,HSL,HSLA AND HEX CODES CAN ALSO BE USED-->I love beans
+        </h1><br>
+        <p id="CFD" title="Just playing around" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Come for
+            dinner</p>
+        <button onClick="swapMyTexts()">Swap the texts</button>
+        <hr>
+        <a href="https://www.google.com" target="_blank">Check here</a>
+        <pre style="font-size: 75%;">
+            Samson likes jollof.
+            Samson likes jollof.
+            Samson likes jollof.
+            Oh, beans and bread too.
+        </pre>
+        <!--Used to like congest spaces and line breaks-->
+        <button type="button" onClick="document.getElementById('example').innerHTML= Date()">Click To Display Date And
+            Time </button>
+        <p id="example"></p>
+        <p><b>i <ins>like</ins> breadddd!!!</b></p>
+        <p><i>i <em>like</em> breadddd!!!</i></p>
+        <p>i <sub>like</sub> breadddd <sup>and</sup> <del>fish</del>!!!<mark>Sweetened</mark></p>
+        <strong>AUDITED IT</strong>
+    </div>
+
+    <img src="https://www.w3schools.com/html/pic_bulboff.gif" id="myImage" alt="An image">
+
+    <p>
+        <button type="button" onClick="light(1)">Light On</button>
+        <button type="button" onClick="light(0)">Light Off</button>
+    </p>
+
+    <div>
+        <a href="https://www.goal.com" target="_blank"><img
+                src="https://www.bing.com/th?id=OIP.PcX5mOVMNF6P3LafvjBAUQHaE7&w=306&h=204&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"
+                alt="sample picture" title="goal web" height="100%" width="100%"></a>
+        <!--Html allows moving images too-->
+        <a href="mailto:farouk.lawal2017@yahoo.com" target="_blank">Send an email</a>
+        <p><cite>The swim</cite> by donald ajagun , 1984.</p>
+        <button onClick="document.location='https://www.google.com'">Click this button</button>
+        <!--Could also be <img src = "image name" alt = " " width = " " height = " "-->
+        <!--<p>
+                <img src = "https://www.bing.com/th?id=OIP.PcX5mOVMNF6P3LafvjBAUQHaE7&w=306&h=204&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="alternative image" style="float:left;">
+                <b>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum suscipit recusandae deleniti itaque, aliquam dolorum unde exercitationem odit eaque, ea et consequatur assumenda impedit nihil expedita totam! Quae, est recusandae?</b>
+            </p>-->
+    </div>
+    <!--Understanding an image map-->
+    <img src="https://th.bing.com/th?q=Frenkie+De+Jong+Ajax&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-WW&cc=NG&setlang=en&adlt=moderate&t=1&mw=247"
+        alt="Frenkie's image" usemap="#Frenkiemap">
+
+    <map name="Frenkiemap">
+        <area shape="rect" coords="34,44,270,350" alt="frenkieshirt" href="https://google.com" target="_blank">
+        <!--DIDNT WORK!! <area shape="circle" coords="337,300,44" alt="The football" href="https://www.goal.com" target="_blank">-->
+    </map>
+
+    <img src="https://www.bing.com/th?id=OIP.NuzUfmqqgH16scrhGmWvmwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"
+        alt="Football Image" usemap="#ballmap">
+
+    <map name="ballmap">
+        <area shape="circle" coords="230,300,300" alt="round football" href="https://www.goal.com" target="_blank"
+            onClick="alertFunction()">
+    </map>
+    <!--POLY-POLYGONAL REGION,DEFAULT-THE ENTIRE REGION-->
+    <!--The noscript tag serves as an alternate text for the script or browsers that can not support javascript-->
+    <script>
+        function alertFunction() {
+            alert("You clicked on the ball!");
+        }
+        function TheFunction() {
+            var z = document.getElementsByClassName("NavBar");
+            for (var i = 0; i < z.length; i++) {
+                z[i].style.display = 'none';
+            }
+        }
+        function swapMyTexts() {
+            document.getElementById("GTT").innerHTML = 'Come for dinner';
+            /*document.getElementById("GTT").style.color = 'green';
+              document.getElementById("GTT").style.backgroundColor = 'lightblue'; */
+            document.getElementById("CFD").innerHTML = 'I love beans';
+        }
+        function light(sw) {
+            var picture;
+            if (sw == 0) {
+                picture = "https://www.w3schools.com/html/pic_bulboff.gif";
+            }
+            else {
+                picture = "https://www.w3schools.com/html/pic_bulbon.gif";
+            }
+            document.getElementById('myImage').src = picture;
+        }
+    </script>
+
+    <div>
+        <p>An example of a quote:</p>
+        <blockquote cite="https://www.goal.com">
+            Lorem ipsum dolor sit <q>amet consectetur adipisicing elit.</q> Aliquid, ipsa repudiandae, veniam
+            reprehenderit animi hic in libero soluta officiis praesentium temporibus et quasi maxime assumenda totam,
+            rem sapiente porro eaque.
+        </blockquote>
+    </div>
+
+    <p style="text-align:center; color:green;">its important to know that <abbr
+            title="Hypertext markup language">HTML</abbr>was found in 1989.</p>
+    <bdo dir="rtl">I love custard and egg</bdo>
+    <p><a href="https://www.google.com" title="Just a tool-tip showing more info" target="_blank">Check here</a></p>
+    <!--  <p><a href = "https://www.google.com"  target="_parent">Check here</a></p>
+        <p><a href = "https`://www.google.com"  target="_top">Check here</a></p> basically values : _top,_parent and _self are the same-->
+    <picture>
+        <source media="(min-width:650px)"
+            srcset="https://www.bing.com/th?id=OIP.NuzUfmqqgH16scrhGmWvmwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2">
+        <source media="(min-width:465px)"
+            srcset="https://th.bing.com/th?q=Frenkie+De+Jong+Ajax&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-WW&cc=NG&setlang=en&adlt=moderate&t=1&mw=247">
+        <img src="data:image/jpeg;base64,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"
+            style="width:auto">
+    </picture>
+
+    <table>
+        <caption>Just Flexing</caption>
+        <!--<colgroup>
+                <col span="2" style="background-color:red;">MULTIPLE COL SPANS TO DIFFERENTLY STYLE OTHER ELEMENTS
+            </colgroup>WIDTH,VISIBILITY:COLLAPSE[TO HIDE COLUMNS],BORDER,BACKGROUND ARE THE PROPERTIES ALLOWED IN THE COLGROUP-->
+        <tr>
+            <th>Love</th>
+            <th style="width:10%;">Life</th>
+            <!--<th colspan="2" style="text-align:center;">Dunya</th>TO SHARE A HEAD FOR 2 COLS-->
+            <th>Dunya</th>
+            <th>Akhira</th>
+        </tr>
+        <tr style="height:60px;">
+            <td>klrr</td>
+            <td>fkfm</td>
+            <td>frkl</td>
+            <td>fltnkj</td>
+        </tr>
+        <tr>
+            <td>klrr</td>
+            <td>fkfm</td>
+            <td>frkl</td>
+            <td>fltnkj</td>
+        </tr>
+    </table>
+    <!--<img src="picture.jpg">	The "picture.jpg" file is located in the same folder as the current page
+        <img src="images/picture.jpg">	The "picture.jpg" file is located in the same folder as the images folder in the current folder
+        <img src="/images/picture.jpg">	The "picture.jpg" file is located in the images folder at the root of the current web
+        <img src="../picture.jpg">	The "picture.jpg" file is located in the folder one level up from the current folder-->
+
+    <!--ABSOLUTE URL IS THE HTTPS://WWW. , RELATIVE IS THE FILE DIRECTORIES-->
+    <iframe src="https:www.goal.com" name="goal_iframe" style="border-style:none; border: 4px solid green;"
+        title="Football News" height="600" width="100%"></iframe>
+    <p><a href="https:www.goal.com" target="goal_iframe">Go To Shopify</a></p>
+    <!--SEEMS LIKE ITS WORKING WITH ONLY GOAL.COM-->
+    <!--   <table>
+            <tr>
+                <th>Like</th>
+                <td>Soul</td>
+            </tr>
+            <tr>
+                <th rowspan="2">swert</th>
+                <td>tree</td>
+            </tr>
+            <tr>
+                <td>sety</td>
+            </tr>
+        </table>ROWSPANNING A ROW TABLE-->
+    <ol type="i" start="3">
+        <!--Values can be 1,A,a,I,i {for different numbering systems}-->
+        <li>Milk</li>
+        <li>Sugar</li>
+        <li>Tea
+            <ol type="a" start="2">
+                <li>Lipton</li>
+                <li>Milo</li>
+                <li>Green tea</li>
+            </ol>
+        </li>
+        <li>Cornflakes</li>
+    </ol>
+    <ul style="list-style-type:square;">
+        <!--DISC,NONE,CIRCLE,SQUARE-->
+        <li>
+            Pond
+            <ul style="list-style-type: disc;">
+                <li>Fish Pond</li>
+                <li>Ram Pond</li>
+            </ul>
+        </li>
+        <li>Stew</li>
+        <li>Cat</li>
+    </ul>
+    <dl>
+        <dt>Lube Bay</dt>
+        <dd>Service of cars and other automobiles</dd>
+        <dt>Abbatoir</dt>
+        <dd>Sales of meat and pastries</dd>
+    </dl>
+
+    <address>
+        written by hefkay,<br>
+        4,Churchgate street.<br>
+        Victoria island.<br>
+        Lagos.
+    </address>
+    <a href="#GTT" title="This takes you to the top" style="text-align:center;">
+        <p>GO TO TOP</p>
+    </a>
+</body>
+
+</html>

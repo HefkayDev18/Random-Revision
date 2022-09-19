@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width , initial scale=1.0">
+        <title>Media Page</title>
+        <link rel="icon" type="image/x-icon" href="favicon.jpg">
+    </head>
+
+    <body style="background-color: orange;">
+        <!--
+            VIDEO FORMATS : .ogg, .webM , .mp4(MPEG4) are supported in html . Flash(.flv , .sw4) requires plug-ins.
+            AUDIO FORMATS : .ogg , .wav , .mp3 and mp4 are supported in html.
+        -->
+        <video width="40%" height="400" controls loop><!--AUTOPLAY does not seem to be working,because its a chromium browser-->
+            <source src="MastClimb.mp4" type="video/mp4">
+            Your browser does not support the video tag
+        </video>
+
+        <video width="40%" height="400" poster="favicon.jpg" autoplay muted>
+            <source src="MastClimb.mp4" type="video/mp4">
+            Your browser does not support the video tag
+        </video>
+
+        <video id="newvideo" width="400">
+            <source src="MastClimb.mp4" type="video/mp4">
+        </video>
+
+        <div>
+            <button onClick="playPause()">Play/Pause</button>
+            <button onClick="turnBig()">Big</button>
+            <button onClick="turnSmall()">Small</button>
+            <button onClick="doNormal()">Normal</button>
+        </div><br>
+
+        <audio id="newaudio" controls>
+            <source src="SampleAudio.wav" type="audio/wav">
+            Your browser does not support the audio tag
+        </audio>
+
+        <audio controls autoplay muted><!--AUTOPLAY does not seem to be working,because its a chromium browser-->
+            <source src="SampleAudio.wav" type="audio/wav">
+            Your browser does not support the audio tag
+        </audio>
+        
+        <!-- THE OBJECT AND EMBED ELEMENT CAN BE USED TO ADD AND EMBED HTML AND AN IMAGE WITHIN A SAMPLE HTML-->
+        <object width="100%" height="400px" data="Framework.html"></object>
+        <object alt="sample photo" data="favicon.jpg"></object><br>
+
+        <embed alt="another sample photo" src="favicon.jpg">
+        <embed width="100%" height="400px" src="graphics.html">
+
+        <!-- ADDING A YOUTUBE VIDEO , WE CAN USE IFRAME OR OBJECT ELEMENT-->
+        <!-- FORMAT: https://youtube.com/embed/id -->
+        <iframe title="youtube page" height="400" width="60%" src="https://www.youtube.com/embed/Mu5bU2i3ifU?playlist=Mu5bU2i3ifU&loop=1&controls=0"></iframe><!--Default loop value is 0-->
+
+     <!--<object height="400" width="60%" data="https://www.youtube.com/embed/Mu5bU2i3ifU?autoplay=1&mute=1"></object>--> 
+
+        <script>
+            var myVideo = document.getElementById("newvideo");
+            var myAudio = document.getElementById("newaudio");
+
+            function playPause() {
+               if(myVideo.paused) {
+                  myVideo.play();
+               }
+               else {
+                  myVideo.pause();
+               }
+            }
+            function turnBig() {
+                myVideo.width = 600;
+            }
+            function turnSmall() {
+                myVideo.width = 200;
+            }
+            function doNormal() {
+                myVideo.width = 400;
+            }
+
+            myAudio.style.backgroundColor="blue";
+            myAudio.style.color="blue";
+            myAudio.style.width="95%";
+        </script>
+    </body>
+</html>

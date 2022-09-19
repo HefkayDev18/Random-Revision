@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Html Forms</title>
+        <meta charset="UTF-8" name="viewport" content="width=device-width , initial scale =1.0">
+        <link rel="icon" type="image/x-icon" href="favicon.jpg">
+    </head>
+
+
+    <body style="background-color: blue">
+        <h2 style="text-align:center; color:white">A SAMPLE HTML FORM</h2>
+        <form action="https://www.w3schools.com/action_page.php" target="_blank" method="post" autocomplete="off">  <!--action="/action_page.php" {ON CLICK OF SUBMIT THE FORM DATA IS SENT TO THAT PAGE USING THE ACTION TAG}-->
+            <!--GET METHOD WOULD DISPLAY THE VALUE OF THE FORM VARIABLES IN THE ADDRESS BAR OF THE NEW TAB WHEREAS POST WOULDNT-->
+            <!--novalidate attribute indicates that the form should not be validated on submit-->
+            <!--TEXT FIELDS-->
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="Farouk" readonly><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Lawal" autofocus> 
+            <!--DEFAULT WIDTH OF TEXT INPUT IS 20 CHARACTERS-->
+            <!--RADIO BUTTONS-->
+            <h2 style="color:greenyellow">Choose your favourite player :</h2>
+            <input type="radio" id="sancho" name="fav_player" value="sancho">
+            <label for="sancho">Sancho</label><br>
+            <input type="radio" id="bruno" name="fav_player" value="bruno">
+            <label for="bruno">Bruno</label><br>
+            <input type="radio" id="martial" name="fav_player" value="martial">
+            <label for="martial">Martial</label>
+            <!--If you needed to submit the radio buttons response , you would have added a value property to each-->
+            <!--CHECKBOXES-->
+            <h2 style="color:greenyellow">Cars i love : </h2>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="lambo">
+            <label for="vehicle1">I love lamborghini</label><br>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="ferrari" disabled>
+            <label for="vehicle2">I love Ferrari</label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Gwagon" checked>
+            <label for="vehicle3">I love Gwagon</label><br><br>
+            <!--USING THE SELECT FORM ELEMENT-->
+            <label for="clubs">Pick your club:</label>
+            <select id="clubs" name="favclub" size="2" multiple>
+                <option value="arsenal">Arsenal</option>
+                <option value="chelsea">Chelsea</option>
+                <option value="everton" selected>Everton</option>
+                <option value="brentford">Brentford</option>
+            </select><br><br><!--Remove method="post" to see multiple data on the form handler-->
+            <!--USING THE TEXT AREA ELEMENT-->
+            <label for="you">About yourself?</label><br>
+            <textarea id="you" name="text" rows="5" cols="30">I love football , tennis and swimming for sports.</textarea><br><br>
+            <!--USING THE FIELDSET AND LEGEND ELEMENTS-->
+            <fieldset>
+                <legend>Personal Details</legend>
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" value="Farouk"><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" value="Lawal"> 
+            </fieldset><br>
+            <!--USING THE DATALIST ELEMENT-->
+            <input list="cities" name="city">
+            <datalist id="cities">
+                <option value="Dubai">
+                <option value="Lagos">
+                <option value="Madrid">
+                <option value="Rabat">
+                <option value="London">
+            </datalist><br><br>
+            <input type="submit" value="submit">
+            <!--USING THE BUTTON ELEMENT-->
+            <button type="button" onClick="alert('You Clicked Me!')">Click Me</button>
+        </form><br><br>
+        
+        <!--USING THE OUTPUT ELEMENT-->
+        <form action="https://www.w3schools.com/action_page.php" target="_blank"
+        oninput="z.value=parseInt(x.value)+parseInt(y.value)">
+        0
+        <input type="range" id="x" name="x" value="50" min="0" max="1000">
+        1000 +
+        <input type="number" id="y" name="y" min="35" max="65" step="5" value="50">
+        =
+        <output name="z" for="x y"></output><br>
+        <input type="submit" value="submit"><br><br>
+        </form>
+
+        <!--Various form input types-->
+        <form action="https://www.w3schools.com/action_page.php" id="newform"  target="_blank" autocomplete="off">
+        <!--<fieldset style="width:200px;">
+            <legend>First Name</legend>
+            <input type="text" id="fname" name="fname">
+        </fieldset>-->
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="Enter your name"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+
+        <label for="pwd">Password:</label><br>
+        <input type="password" id="pwd" name="pword" maxlength="10" required><br><br>
+
+        <label for="favcolor">Choose your favorite color:</label><br>
+        <input type="color" id="favcolor" name="favcolor" value="#fff000"><br>
+
+        <label for="dated">Enter your birth date:</label><br>
+        <input type="date" id="dated" name="date" min="2001-02-12" max="2022-07-25"><br>
+
+        <label for="birthdatetime">Enter Your birthday time:</label><br>
+        <input type="datetime-local" id="birthdatetime" name="bdatetime"><br>
+
+        <label for="myemail">Enter your email:</label><br>
+        <input type="email" id="myemail" name="email" size="40"><br>
+
+        <label for="myfile">Choose a file:</label><br>
+        <input type="file" id="myfile" name="thefile" multiple><br>
+
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <input type="hidden" id="newId" name="newid" value="0573">
+
+        <label for="bdaymonth">Month and year:</label><br>
+        <input type="month" id="bdaymonth" name="bdaymonth" max="2022-12"><br><br>
+
+        <label for="mysearch">Use the search:</label><br>
+        <input type="search" id="mysearch" name="mysearch" minlength="4"><br><br>
+
+        <label for="disptime">Enter the time</label><br>
+        <input type="time" id="disptime" name="disptime"><br><br>
+
+        <label for="weekno">Enter the week number:</label><br>
+        <input type="week" id="weekno" name="weekno"><br>
+    <!--<label for="enterUrl">Enter your url</label><br>
+        <input type="url" id="enterUrl" name="enterUrl"><br>HAS SOME ISSUES--> 
+
+        <input type="image" src="favicon.jpg" alt="submit" width="48" height="48"><br>
+
+        <!--PATTERN FOR ALPHABET [A-Za-z]{4} example-->
+        <input type="submit"  value="submit">
+        <input type="submit" formnovalidate="formnovalidate" value="submit without validation">
+        <!--YOU CAN ALSO ADD THE NOVALIDATE ATTRIBUTE TO THE FORM TAG-->
+        <input type="submit" formaction="https://www.w3schools.com/action_page2.php"  value="Submit as Developer"><br>
+
+        <!--FORMENCTYPE AND FORMACTION ARE APPLICABLE TO INPUT TYPES SUBMIT AND IMAGE-->
+        <!--YOU CAN OVERRIDE A METHOD DECLARED IN THE FORM TAG BY USING A FORMMETHOD
+        ATTRIBUTE IN THE SUBMIT INPUT TYPE-->
+        <!--YOU CAN USE THE FORMTARGET ELEMENT AS WELL-->
+
+        <!--FOR THE FORMENCTYPE INPUT ATTRIBUTE I SET THE VALUE TO "MULTIPART/FORM-DATA" 
+        I HAD TO ADD AN ACTION VALUE OF _BINARY.ASP TO THE ACTION_PAGE
+        SO THE DATA COULD BE PROPERLY ENCODED ON SUBMIT -->
+        <input type="reset">
+        </form>
+
+        <label for="telno">Enter your phone no:</label><br>
+        <input type="tel" id="telno" name="teleno" form="newform" placeholder="090-abcd-0901" pattern="[0-9]{3}-[A-Za-z]{5}-[0-9]{4}" required>
+    </body>
+</html>
